@@ -1,0 +1,18 @@
+/* retrieve pokemon name*/
+export const GET_POKEMON = 'GET_POKEMON';
+
+export const GET_POKEMON_SUCCESS = 'GET_POKEMON_SUCCESS';
+
+export const GET_POKEMON_FAILURE = 'GET_POKEMON_FAILURE';
+
+/* toggle side panels  */
+export const GET_POKEMON_DETAILS_REQUEST = 'GET_POKEMON_DETAILS_REQUEST';
+
+export const GET_POKEMON_DETAILS_SUCCESS = 'GET_POKEMON_DETAILS_SUCCESS';
+
+export const GET_POKEMON_DETAILS_FAILURE = 'GET_POKEMON_DETAILS_FAILURE';
+
+/* toggle side panels  */
+export const UPDATE_LEFT_PANEL = 'UPDATE_LEFT_PANEL';
+
+export const UPDATE_RIGHT_PANEL = 'UPDATE_RIGHT_PANEL';
