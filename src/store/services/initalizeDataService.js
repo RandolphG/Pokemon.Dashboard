@@ -1,3 +1,6 @@
+import store from '../store';
+import { setAllResults } from '../reducers';
+
 const url = {
   base: 'https://pokeapi.co/api/v2/',
   ability: 'https://pokeapi.co/api/v2/ability/',
@@ -7,10 +10,11 @@ const url = {
   stats: 'https://pokeapi.co/api/v2/stat',
 };
 
+const limit = limit => `?limit=${limit}`;
+
 /**
  * set local data
  * @param data
- * @param ttl
  */
 const setPokemonLocalStorage = data => {
   localStorage.setItem('pokemon_list', JSON.stringify(data));
@@ -25,6 +29,14 @@ const setCurrentDetailsLocalStorage = data => {
 };
 
 /**
+ * set current all results
+ * @param data
+ */
+const setAllResultsLocalStorage = data => {
+  localStorage.setItem('all_results_details', JSON.stringify(data));
+};
+
+/**
  * fetch country & flag data
  * @returns {Promise<*>}
  */
@@ -33,7 +45,14 @@ export const api = {
     try {
       const data = await fetch(`${url.pokemon}`).then(res => res.json());
 
+      const count = data.count;
+
+      const fullList = await fetch(`${url.pokemon}${limit(count)}`).then(res => res.json());
+
       setPokemonLocalStorage(data);
+      setAllResultsLocalStorage(fullList.results);
+
+      store.dispatch(setAllResults(fullList.results));
 
       return {
         results: data.results,
@@ -64,6 +83,7 @@ export const api = {
         held_items: data.held_items,
         moves: data.moves,
         sprites: data.sprites,
+        types: data.types,
       };
     } catch (error) {
       console.log(error);

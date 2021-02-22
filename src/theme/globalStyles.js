@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     overflow: hidden;
     overflow-x: hidden;
-    background-image: linear-gradient(to top, #a3bded 0%, #6991c7 100%);
+    background-image: linear-gradient(to bottom, #9FA6B0 0%, #8A8E97 20%,#676A6F 40%,#4B4E53 60%,#2E3136 100%);
     background-position: center;
     background-size: cover;
     padding: 20px;
@@ -47,7 +47,7 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 10px;
     width: 100%;
     height: 100%;
-    max-width: 1200px;
+    max-width: 1100px;
     max-height: 800px;
     background: linear-gradient(180deg, #e0e9fd 0%, #e9ecf1 90%);
     box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.4);
@@ -144,15 +144,15 @@ const GlobalStyle = createGlobalStyle`
     transition: all 300ms cubic-bezier(0.19, 1, 0.56, 1);
   }
   .right-area.show {
-    transform: translateX(0);
+    transform: translateX(150px);
     width: 100%;
     opacity: 1;
   }
 
   .content-section {
-    height: 40vh;
+    height: 30vh;
     display: block;
-    margin-top: 32px;
+    margin-top: 10px;
     overflow-x: hidden;
     padding: 0 40px;
   }
@@ -211,15 +211,6 @@ const GlobalStyle = createGlobalStyle`
   }
   .access-link-wrapper:nth-child(3) .access-icon {
     background-color: #3275f7;
-  }
-  .access-link-wrapper:nth-child(4) .access-icon {
-    background-color: #3275f7;
-  }
-  .access-link-wrapper:nth-child(5) .access-icon {
-    background-color: #22244a;
-  }
-  .access-link-wrapper:nth-child(6) .access-icon {
-    background-color: #22244a;
   }
 
   .access-text {
@@ -344,7 +335,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .name-cell {
-    width: 40%;
+    width: 48%;
     word-break: break-all;
   }
   .name-cell.pdf:before {
@@ -366,7 +357,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 4px;
     display: inline-block;
     vertical-align: middle;
-    margin-right: 16px;
+    margin-right: 11px;
   }
 
   .size-cell {
@@ -445,14 +436,21 @@ const GlobalStyle = createGlobalStyle`
     overflow: auto;
   }
 
-  .right-area-header-wrapper {
+  .right-area-header {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    //background: blueviolet;
   }
-  .right-area-header-wrapper .more-action {
+  .right-area-header .more-action {
     width: 24px;
     height: 24px;
+  }
+ .right-area-title{
+   color: black;
+   font-size: 1.5rem;
+   font-weight: bold;
   }
 
   .download-item-line {
@@ -465,104 +463,19 @@ const GlobalStyle = createGlobalStyle`
     color: #888da9;
   }
 
-  .download-area {
-    background-color: #eceffb;
-    border-radius: 12px;
-    padding: 8px;
-    display: flex;
-    align-items: center;
-    margin-top: 12px;
-    cursor: pointer;
-  }
-
-  .download-item-texts {
-    padding: 0 12px;
-  }
-  .download-item-texts p {
-    line-height: 16px;
-    margin: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 150px;
-  }
-
-  .download-text-header {
-    font-size: 12px;
-  }
-
-  .download-text-info {
-    color: #888da9;
-    font-size: 10px;
-  }
-  .download-text-info span {
-    margin-left: 8px;
-  }
-
-  .download-item-icon {
-    width: 32px;
-  }
-
-  .download-icon {
-    width: 24px;
-    fill: #4bc3a7;
-  }
-
-  .progress-bar {
-    height: 4px;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 2px;
-    background-color: #dadff3;
-    margin: 6px 0;
-  }
-
-  .progress {
-    height: 100%;
-    width: 40%;
-    background-color: #4bc0dd;
-    display: block;
-  }
 
   .received-item-line {
+    //background: blueviolet;
     height: 150px;
     width: 100%;
-    padding-top: 12px;
+    padding-top: 1vh;
     display: flex;
     padding-left: 4px;
   }
 
-  .progress-line {
-    height: 100%;
-    width: 2px;
-    background-color: #22244a;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    position: relative;
-  }
-  .progress-line:before, .progress-line:after {
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #22244a;
-    transform: translateX(-50%);
-    left: 50%;
-  }
-  .progress-line:after {
-    bottom: 0;
-  }
-
-  .time {
-    margin-left: 12px;
-    font-size: 10px;
-    color: #888da9;
-  }
 
   .received-items-content {
-    padding: 24px 10px;
+    padding: 10px 10px;
   }
 
   .received-files {
@@ -582,24 +495,20 @@ const GlobalStyle = createGlobalStyle`
     margin-left: 12px;
     margin-top: 12px;
   }
-  .received-files-info span {
-    color: #7a8dc5;
-  }
 
 
-  .info-list span {
+  .subtitle  {
     color: #7a8dc5;
     display: flex;
     flex-direction: column;
+    font-weight: bold;
   }
 
   .stats-info-list span {
-    color: #7a8dc5;
     display: flex;
     flex-direction: column;
   }
   .basic-info-list span {
-    color: #7a8dc5;
     display: flex;
     flex-direction: column;
   }
@@ -632,8 +541,7 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 4px 0 0 4px;
   }
 
-  .btn-close-left,
-  .btn-close-right {
+  .btn-close-left{
     border: none;
     background-color: transparent;
     position: absolute;
@@ -645,12 +553,25 @@ const GlobalStyle = createGlobalStyle`
     display: none;
   }
 
+  .btn-close-right {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 4px;
+    right: 140px;
+    color: var(--light-font);
+    outline: none;
+    cursor: pointer;
+    display: none;
+  }
+
+
   .show .btn-close-left,
   .show .btn-close-right {
     display: block;
   }
 
-  @media screen and (min-width: 850px) and (max-width: 1042px) {
+  @media screen and (min-width: 600px) and (max-width: 700px) {
     .access-icon {
       padding: 16px;
     }
@@ -660,9 +581,120 @@ const GlobalStyle = createGlobalStyle`
       height: 20px;
     }
   }
-  @media screen and (max-width: 900px) {
+
+  @media screen and (min-width: 900px) and (max-width: 1200px) {
+    .right-area{
+      display: flex;
+      flex-direction: column;
+      //background: aqua;
+    }
+    
+    .right-area-title{
+      background: white;
+      padding: 0 8px;
+      border-radius: 5px;
+    }
+
+    .pokemon-detail-container{
+      //background: coral;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .elements{
+      position: relative;
+      //background: darkblue;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0 2vw;
+    }
+
+
+    .received-files-info{
+      //background: white;
+      position: absolute;
+      top: 20vh;
+      left: 2vw;
+      width: 20vw;
+      height: 42vh;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      
+      font-size: 16px;
+   }
+    .profile{
+      //background: darkslateblue;
+      display: flex;
+      flex-direction: column !important;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+      
+    
+    .basic-info-list{
+      //background:yellow;
+      width: 16vw;
+      display: flex;
+      flex-direction: column !important;
+      margin-bottom: 1vh;
+      line-height: 1.2rem;
+    }
+    
+    .character-info{
+      display: flex;
+      //background: blue;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-left: 8px;
+      width: 16vw;
+    }
+    
+    .stats-info-list{
+      //background: seagreen;
+      display: flex;
+      width: 16vw;
+      flex-direction: column !important;
+      margin-bottom: 1vh;
+    }
+    
+    
+    .attributes{
+      //background: brown;
+      display: flex;
+      flex-direction: column !important;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+      
+    .abilities-info-list{
+      //background:blueviolet;
+      display: flex;
+      width: 16vw;
+      flex-direction: column !important;
+      margin-bottom: 1vh;
+    }
+    
+    .types-info-list{
+      //background: chocolate;
+      display: flex;
+      width: 16vw;
+      flex-direction: column !important;
+    }
+  }
+  
+  @media screen and (max-width: 1000px) {
     .right-area {
-      transform: translateX(100%);
+      transform: translateX(200%);
       position: absolute;
       opacity: 0;
       z-index: 2;
@@ -678,7 +710,104 @@ const GlobalStyle = createGlobalStyle`
       width: 36px;
       height: 36px;
     }
+
+    .pokemon-detail-container{
+      //background: coral;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .elements{
+      position: relative;
+      //background: darkblue;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0 2vw;
+    }
+
+
+    .received-files-info{
+      //background: white;
+      position: absolute;
+      top: 20vh;
+      left: 2vw;
+      width: 20vw;
+      height: 42vh;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      font-size: 16px;
+    }
+    .profile{
+      //background: darkslateblue;
+      display: flex;
+      flex-direction: column !important;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+
+
+    .basic-info-list{
+      //background:yellow;
+      width: 16vw;
+      display: flex;
+      flex-direction: column !important;
+      margin-bottom: 1vh;
+      line-height: 1.2rem;
+    }
+
+    .character-info{
+      display: flex;
+      //background: blue;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-left: 8px;
+      width: 16vw;
+    }
+
+    .stats-info-list{
+      //background: seagreen;
+      display: flex;
+      width: 16vw;
+      flex-direction: column !important;
+      margin-bottom: 1vh;
+    }
+
+
+    .attributes{
+      //background: brown;
+      display: flex;
+      flex-direction: column !important;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    .abilities-info-list{
+      //background:blueviolet;
+      display: flex;
+      width: 16vw;
+      flex-direction: column !important;
+      margin-bottom: 1vh;
+    }
+
+    .types-info-list{
+      //background: chocolate;
+      display: flex;
+      width: 16vw;
+      flex-direction: column !important;
+    }
   }
+  
   @media screen and (max-width: 768px) {
     .left-area {
       transform: translateX(-100%);
@@ -711,6 +840,102 @@ const GlobalStyle = createGlobalStyle`
 
     .access-link-wrapper {
       width: 33.3%;
+    }
+
+    .pokemon-detail-container{
+      //background: coral;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .elements{
+      position: relative;
+      //background: darkblue;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0 2vw;
+    }
+
+
+    .received-files-info{
+      //background: white;
+      position: absolute;
+      top: 20vh;
+      left: 2vw;
+      width: 20vw;
+      height: 42vh;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      font-size: 16px;
+    }
+    .profile{
+      //background: darkslateblue;
+      display: flex;
+      flex-direction: column !important;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+
+
+    .basic-info-list{
+      //background:yellow;
+      width: 16vw;
+      display: flex;
+      flex-direction: column !important;
+      margin-bottom: 1vh;
+      line-height: 1.2rem;
+    }
+
+    .character-info{
+      display: flex;
+      //background: blue;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-left: 8px;
+      width: 16vw;
+    }
+
+    .stats-info-list{
+      //background: seagreen;
+      display: flex;
+      width: 16vw;
+      flex-direction: column !important;
+      margin-bottom: 1vh;
+    }
+
+
+    .attributes{
+      //background: brown;
+      display: flex;
+      flex-direction: column !important;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    .abilities-info-list{
+      //background:blueviolet;
+      display: flex;
+      width: 16vw;
+      flex-direction: column !important;
+      margin-bottom: 1vh;
+    }
+
+    .types-info-list{
+      //background: chocolate;
+      display: flex;
+      width: 16vw;
+      flex-direction: column !important;
     }
   }
   @media screen and (max-width: 520px) {

@@ -1,18 +1,27 @@
-import React from 'react';
-import { ButtonShowLeftArea } from './ButtonShowLeftArea';
-import { MainAreaHeader } from './MainAreaHeader';
-import { RecentFilesSection } from './RecentFilesSection';
-import { ButtonShowRightArea } from './ButtonShowRightArea';
+import React, { useEffect } from 'react';
+import { ButtonLeft, ButtonRight } from './Buttons';
+import { SearchBar } from './SearchBar';
+import { ListSection } from './ListSection';
+import { FilterOptions } from './FilterOptions';
+import { getPokemonDetailsRequest } from '../../../../store';
+import { useDispatch } from 'react-redux';
+
+const defaultSearch = `bulbasaur`;
 
 const MainArea = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getPokemonDetailsRequest(defaultSearch));
+  });
+
   return (
     <div className="main-area">
-      <ButtonShowRightArea />
-      <ButtonShowLeftArea />
-      <MainAreaHeader />
-      {/*<QuickAccessSection />*/}
-      {/*<PreviewSection />*/}
-      <RecentFilesSection />
+      <ButtonRight />
+      <ButtonLeft />
+      <SearchBar />
+      <FilterOptions />
+      <ListSection />
     </div>
   );
 };

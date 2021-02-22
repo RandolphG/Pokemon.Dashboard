@@ -16,7 +16,17 @@ export const getCount = createSelector(appState, state => state.count);
 
 export const getResults = createSelector(appState, pokemonReducer => pokemonReducer.results);
 
-export const getSprites = createSelector(details, state => state.sprites);
+export const getFilteredResults = createSelector(
+  appState,
+  pokemonReducer => pokemonReducer.filteredResults
+);
+
+export const getSearchInput = createSelector(
+  appState,
+  pokemonReducer => pokemonReducer.searchInput
+);
+
+export const getSprites = createSelector(details, state => state && state.sprites);
 
 export const getPokemonBasicDetails = createSelector(details, state => {
   return [
@@ -50,5 +60,17 @@ export const getPokemonStats = createSelector(
       const newStat = { name: name, stats: baseState };
       stat.push(newStat);
       return stat;
+    }, [])
+);
+
+export const getPokemonTypes = createSelector(
+  details,
+  state =>
+    state.types &&
+    state.types.reduce((type, data) => {
+      const name = data.type.name;
+      const newType = { name: name };
+      type.push(newType);
+      return type;
     }, [])
 );

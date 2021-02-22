@@ -1,5 +1,5 @@
-# COVID-19 
-![COVID-19 App](https://github.com/RandolphG/COVID19/blob/main/public/_covid.gif?raw=true)
+# PokeDASH 
+![PokeDASH App](https://github.com/RandolphG/Pokemon-Dashboard//blob/main/public/_pokemon.gif?raw=true)
 
 
 <a href="https://discord.gg/Xfa6xgr2Zf"><img src="https://img.shields.io/badge/discord-join-7289DA.svg" /></a>
@@ -15,16 +15,15 @@
 
 
 ```bash
-$ git clone https://github.com/RandolphG/COVID19.git
+$ git clone https://github.com/RandolphG/Pokemon-Dashboard.git
 $ cd project
 $ npm i
 $ npm run electron 
 ```
 ### Features
-💪 POKEMON Api : https://covid19api.com/
-💎  CDN of Country Flags : https://flags.fmcdn.net/
+💪 POKEMON Api : https://pokeapi.co/docs/v2
 
-🕘  Styled Components & Custom css
+💎  Styled Components & Custom css
 ☀️ electron
 
 🔧 connected react router
@@ -35,29 +34,34 @@ $ npm run electron
 🦝 framer-motion
 
 ### requirements 
-👍 api : https://pokeapi.co/docs/v2
 
-💩 Pagination. 
-
-💩 Option to retrieve all data.
-
-💩 Display loader each time you load data.
-
-💩 Click on a pokemon name to get more details.
-
-💩 Photo Placeholder.
+💩 TypeScript, tests, eslint.
 
 💩 Slider  gallery  for displaying multiple images.
 
-💩 Show the type of Pokémon on details page
+
+💩 Pagination.
+
+💩 Photo Placeholder.
 
 💩 Filtered List of similar type pokemon  in modal.
 
-💩 Stay in the same view when refreshing.
+💩 Display loader each time you load data.
 
 💩 Filter by type | ability on  HOME to display selected pokemon.
 
-💩 Search box.
+👍 Option to retrieve all data.
+
+👍 Click on a pokemon name to get more details.
+
+👍 Show the type of Pokémon on details page
+
+
+👍 Stay in the same view when refreshing.
+
+👍 api : https://pokeapi.co/docs/v2
+
+👍 Search box.
 
 👍 Stylize to look good on desktop & mobile.
 
@@ -65,16 +69,15 @@ $ npm run electron
 
 👍 UX and UI.
 
-💩 Code clarity & error handling.
+👍 Code clarity & error handling.
 
 👍 ReactJS.
 
-💩 TypeScript, tests, eslint.
 
 👍 Redux.
 
 👍 Git repo and add cinnamondevelopers@gmail.com.
 
-💩 Neat commit.
+👍 Neat commit.
 
 

@@ -1,14 +1,23 @@
-import { createReducer } from '@reduxjs/toolkit';
+import { createReducer, current } from '@reduxjs/toolkit';
 import {
+  SEARCH,
+  SORT,
+  SORT_REVERSE,
   UPDATE_LEFT_PANEL,
   UPDATE_RIGHT_PANEL,
+  GET_ALL_POKEMON,
   GET_POKEMON_SUCCESS,
   GET_POKEMON_FAILURE,
   GET_POKEMON_DETAILS_SUCCESS,
+  GET_ALL_POKEMON_RESULTS,
 } from './actionType';
+
 /* Pokemon name */
 const initialState = {
+  allResults: [],
   results: [],
+  filteredResults: [],
+  searchInput: '',
   next: null,
   previous: null,
   count: null,
@@ -25,19 +34,53 @@ export const pokemonReducer = createReducer(initialState, {
       count,
       next,
       previous,
+      filteredResults: results,
     };
   },
+  [GET_ALL_POKEMON]: (state, { allResults }) => ({
+    ...state,
+    allResults,
+  }),
   [GET_POKEMON_FAILURE]: (state, { error }) => ({
     ...state,
     error: error,
   }),
+  [SEARCH]: (state, { searchInput }) => {
+    return {
+      ...state,
+      searchInput,
+      filteredResults: current(state).filteredResults.filter(result => {
+        if (searchInput === '') {
+          return current(state).results;
+        } else if (result.name.toLowerCase().includes(searchInput.toLowerCase())) {
+          return result;
+        }
+      }),
+    };
+  },
+  [SORT]: state => ({
+    ...state,
+    filteredResults: current(state)
+      .filteredResults.slice()
+      .sort((a, b) => (a.name > b.name ? 1 : -1)),
+  }),
+  [SORT_REVERSE]: state => ({
+    ...state,
+    filteredResults: current(state)
+      .filteredResults.slice()
+      .sort((a, b) => (a.name < b.name ? 1 : -1)),
+  }),
+  [GET_ALL_POKEMON_RESULTS]: state => ({
+    ...state,
+    filteredResults: current(state).allResults,
+  }),
   [UPDATE_RIGHT_PANEL]: (state, action) => ({
     ...state,
-    rightPanelShow: !action.payload,
+    rightPanelShow: action.payload,
   }),
   [UPDATE_LEFT_PANEL]: (state, action) => ({
     ...state,
-    leftPanelShow: !action.payload.error,
+    leftPanelShow: action.payload,
   }),
 });
 
@@ -74,6 +117,7 @@ export const pokemonDetailsReducer = createReducer(details, {
       held_items,
       moves,
       sprites,
+      types,
     }
   ) => ({
     ...state,
@@ -90,5 +134,6 @@ export const pokemonDetailsReducer = createReducer(details, {
     held_items,
     moves,
     sprites,
+    types,
   }),
 });

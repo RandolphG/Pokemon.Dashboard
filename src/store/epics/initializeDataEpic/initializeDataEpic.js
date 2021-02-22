@@ -44,6 +44,7 @@ export const getDetailsEpic = action$ =>
             held_items,
             moves,
             sprites,
+            types,
           }) =>
             getPokemonDetailsSuccess({
               id,
@@ -59,6 +60,7 @@ export const getDetailsEpic = action$ =>
               held_items,
               moves,
               sprites,
+              types,
             })
         ),
         catchError(error => of(getPokemonDetailsFailure(error)))

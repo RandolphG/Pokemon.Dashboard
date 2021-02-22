@@ -7,6 +7,11 @@ import {
   GET_POKEMON_DETAILS_REQUEST,
   GET_POKEMON_DETAILS_SUCCESS,
   GET_POKEMON_DETAILS_FAILURE,
+  SEARCH,
+  GET_ALL_POKEMON,
+  SORT,
+  SORT_REVERSE,
+  GET_ALL_POKEMON_RESULTS,
 } from './actionType';
 
 /* get pokemon  */
@@ -39,6 +44,7 @@ export const getPokemonDetailsSuccess = ({
   held_items,
   moves,
   sprites,
+  types,
 }) => ({
   type: GET_POKEMON_DETAILS_SUCCESS,
 
@@ -55,11 +61,23 @@ export const getPokemonDetailsSuccess = ({
   held_items,
   moves,
   sprites,
+  types,
 });
 
 export const getPokemonDetailsFailure = error => ({ type: GET_POKEMON_DETAILS_FAILURE, error });
 
-/* toggle panels*/
-export const toggleRightPanel = () => ({ type: UPDATE_RIGHT_PANEL });
+export const setSearchInput = searchInput => {
+  return { type: SEARCH, searchInput };
+};
 
-export const toggleLeftPanel = () => ({ type: UPDATE_LEFT_PANEL });
+export const setSort = () => ({ type: SORT });
+
+export const setSortReverse = () => ({ type: SORT_REVERSE });
+
+export const setAllResults = allResults => ({ type: GET_ALL_POKEMON, allResults });
+
+export const getAllResults = () => ({ type: GET_ALL_POKEMON_RESULTS });
+
+export const toggleRightPanel = payload => ({ type: UPDATE_RIGHT_PANEL, payload: payload });
+
+export const toggleLeftPanel = payload => ({ type: UPDATE_LEFT_PANEL, payload: payload });

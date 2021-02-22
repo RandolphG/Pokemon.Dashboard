@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { LeftArea } from './LeftArea';
 import { RightArea } from './RightArea';
 import { MainArea } from './MainArea';
-import { getPokemonRequest } from '../../../store/reducers/pokemon';
+import { getPokemonRequest } from '../../../store';
 import { useDispatch } from 'react-redux';
 
 const AppContainer = () => {

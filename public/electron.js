@@ -9,7 +9,7 @@ const mainWindowDetails = {
   minWidth: 600,
   minHeight: 990,
   maxHeight: 990,
-  maxWidth: 1420,
+  maxWidth: 1200,
   resizable: true,
   transparent: false,
   frame: true,
