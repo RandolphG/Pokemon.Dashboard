@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { toggleRightPanel } from '../../../../../../store';
+import { toggleRightPanel } from '../../../../../../store/actions';
 
 const ButtonRight = () => {
   const dispatch = useDispatch();

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllResults, getCount, setSort, setSortReverse } from '../../../../../store';
+import { getAllResults, setSort, setSortReverse } from '../../../../../store/actions';
+import { getCount } from '../../../../../store';
 
 const FilterOptions = () => {
   const resultsCount = useSelector(getCount);

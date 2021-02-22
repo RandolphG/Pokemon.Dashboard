@@ -26,3 +26,10 @@ export const GET_ALL_POKEMON_RESULTS = 'GET_ALL_POKEMON_RESULTS';
 export const SORT = 'SORT';
 
 export const SORT_REVERSE = 'SORT_REVERSE';
+
+/* electron controller actions*/
+export const CLOSE_APPLICATION = 'CLOSE_APPLICATION';
+
+export const OPEN_RESOURCE_MONITOR = 'OPEN_RESOURCE_MONITOR';
+
+export const RESTART_APPLICATION = 'RESTART_APPLICATION';

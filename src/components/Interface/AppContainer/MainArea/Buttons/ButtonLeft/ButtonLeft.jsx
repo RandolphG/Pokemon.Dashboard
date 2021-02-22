@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { toggleLeftPanel } from '../../../../../../store';
+import { toggleLeftPanel } from '../../../../../../store/actions';
 
 const ButtonLeft = () => {
   const dispatch = useDispatch();

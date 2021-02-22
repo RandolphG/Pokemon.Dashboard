@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getFilteredResults, getPokemonDetailsRequest } from '../../../../../../store';
+import { getFilteredResults } from '../../../../../../store';
+import { getPokemonDetailsRequest } from '../../../../../../store/actions';
 
 const List = () => {
   const data = useSelector(getFilteredResults);

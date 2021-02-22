@@ -10,7 +10,7 @@ import {
   GET_POKEMON_FAILURE,
   GET_POKEMON_DETAILS_SUCCESS,
   GET_ALL_POKEMON_RESULTS,
-} from './actionType';
+} from '../actions';
 
 /* Pokemon name */
 const initialState = {

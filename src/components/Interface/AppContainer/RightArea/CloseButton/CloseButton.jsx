@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { toggleRightPanel } from '../../../../../store';
 import React from 'react';
+import { toggleRightPanel } from '../../../../../store/actions';
 
 const CloseButton = () => {
   const dispatch = useDispatch();

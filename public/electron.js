@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
 
@@ -82,4 +82,21 @@ app.on('activate', () => {
   if (main === null) {
     createWindow();
   }
+});
+
+/*
+ This is the method that will actually close the app.
+ This method sets the allowQuit flag to true, then tries to close the app.
+ Sets flag to true to bypass the check in the mainWindow.on('close') event.*/
+ipcMain.on('closeMainWindow', () => {
+  app.quit();
+});
+
+/*
+This received confirmation on whether the modal was opened or not.
+If it wasn't then the setInterval method further down will close the app after a certain amount of time.*/
+ipcMain.on('closeOrMinimizeModalConfirmation', () => {});
+
+ipcMain.on('closeOrMinimizeModal', () => {
+  mainWindow.webContents.send('closeOrMinimizeModal');
 });

@@ -2,7 +2,8 @@ import React from 'react';
 import { SvgIcon } from './SvgIcon';
 import { icons } from './SvgIcon';
 import { useDispatch, useSelector } from 'react-redux';
-import { getLeftButtonState, toggleLeftPanel } from '../../../../store';
+import { getLeftButtonState } from '../../../../store';
+import { toggleLeftPanel } from '../../../../store/actions';
 
 const LeftArea = () => {
   const toggle = useSelector(getLeftButtonState);
@@ -34,7 +35,7 @@ const LeftArea = () => {
   };
 
   const ButtonLogout = () => (
-    <button className="btn-logout">
+    <button onClick={() => console.log(`LOG_OUT`)} className="btn-logout">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"

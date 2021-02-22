@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getSearchInput, setSearchInput } from '../../../../../store';
+import { getSearchInput } from '../../../../../store';
+import { setSearchInput } from '../../../../../store/actions';
 
 const SearchBar = () => {
   const searchInput = useSelector(getSearchInput);

@@ -9,7 +9,7 @@ import {
   getPokemonDetailsSuccess,
   getPokemonFailure,
   getPokemonSuccess,
-} from '../../reducers';
+} from '../../actions';
 
 export const initializeDataEpic = action$ =>
   action$.pipe(

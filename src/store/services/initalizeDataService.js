@@ -1,5 +1,5 @@
 import store from '../store';
-import { setAllResults } from '../reducers';
+import { setAllResults } from '../actions';
 
 const url = {
   base: 'https://pokeapi.co/api/v2/',
