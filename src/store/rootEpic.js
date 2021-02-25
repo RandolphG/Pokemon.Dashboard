@@ -1,12 +1,12 @@
-import { combineEpics } from 'redux-observable';
-import { of } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { combineEpics } from "redux-observable";
+import { of } from "rxjs";
+import { catchError } from "rxjs/operators";
 
-import rootEpics from './epics';
+import rootEpics from "./epics";
 
 const protect = epic => (action$, state$, dependencies) =>
   epic(action$, state$, dependencies).pipe(
-    catchError(error => of({ type: 'EPIC_FAILURE', error }))
+    catchError(error => of({ type: "EPIC_FAILURE", error }))
   );
 
 const protectAndCombineEpics = (...epics) => {

@@ -1,7 +1,7 @@
-import { ofType } from 'redux-observable';
-import { from, of } from 'rxjs';
-import { catchError, map, switchMap } from 'rxjs/operators';
-import { api } from '../../services';
+import { ofType } from "redux-observable";
+import { from, of } from "rxjs";
+import { catchError, map, switchMap } from "rxjs/operators";
+import { api } from "../../services";
 import {
   GET_POKEMON,
   GET_POKEMON_DETAILS_REQUEST,
@@ -9,7 +9,7 @@ import {
   getPokemonDetailsSuccess,
   getPokemonFailure,
   getPokemonSuccess,
-} from '../../actions';
+} from "../../actions";
 
 export const initializeDataEpic = action$ =>
   action$.pipe(
@@ -42,7 +42,6 @@ export const getDetailsEpic = action$ =>
             abilities,
             stats,
             held_items,
-            moves,
             sprites,
             types,
           }) =>
@@ -58,7 +57,6 @@ export const getDetailsEpic = action$ =>
               abilities,
               stats,
               held_items,
-              moves,
               sprites,
               types,
             })
