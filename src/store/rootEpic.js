@@ -2,7 +2,7 @@ import { combineEpics } from "redux-observable";
 import { of } from "rxjs";
 import { catchError } from "rxjs/operators";
 
-import rootEpics from "./epics";
+import root from "./epics";
 
 const protect = epic => (action$, state$, dependencies) =>
   epic(action$, state$, dependencies).pipe(
@@ -15,4 +15,4 @@ const protectAndCombineEpics = (...epics) => {
   return combineEpics(...protectedEpics);
 };
 
-export const root = protectAndCombineEpics(rootEpics);
+export const rootEpics = protectAndCombineEpics(root);

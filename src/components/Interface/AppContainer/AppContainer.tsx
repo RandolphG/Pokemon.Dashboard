@@ -9,7 +9,6 @@ import { getPokemonRequest } from "../../../store/actions";
 const AppContainer = () => {
   const dispatch = useDispatch();
 
-  console.log(`getPokemonRequest()->`, getPokemonRequest());
   useEffect(() => {
     dispatch(getPokemonRequest());
   }, []);

@@ -8,6 +8,7 @@ import {
   SEARCH,
 } from "../../../../store/actions";
 import { UPDATE_LEFT_PANEL, UPDATE_RIGHT_PANEL } from "../../../../store/actions";
+import { DetailsData } from "../../../../store/services/types";
 
 export const ADD_NOTIFICATIONS = "SET_NOTIFICATIONS";
 
@@ -54,6 +55,7 @@ export interface PokemonReducer {
   count: number | null;
 }
 
+/*
 export interface PokemonDetailsReducer {
   id: number;
   name: string;
@@ -65,6 +67,24 @@ export interface PokemonDetailsReducer {
   stats: Stat[];
   sprites: Sprites;
   types: string[];
+}
+*/
+
+export interface PokemonDetailsReducer {
+  id: number;
+  name: string;
+  base_experience: number;
+  height: number;
+  order: number;
+  weight: number;
+  abilities: { ability: { name: string } }[];
+  stats: Stat[];
+  sprites: Sprites;
+  types: { type: PokemonType }[];
+}
+
+export interface PokemonType {
+  name: string;
 }
 
 export interface GetPokemonSuccessAction {
@@ -95,8 +115,9 @@ export interface GetPokemonFailureAction {
   error: Error;
 }
 
-export interface GetPokemonDetailsSuccessAction extends PokemonDetailsReducer {
+export interface GetPokemonDetailsSuccessAction extends DetailsData {
   type: typeof GET_POKEMON_DETAILS_SUCCESS;
+  data: DetailsData;
 }
 
 export interface GetPokemonDetailsRequestAction {

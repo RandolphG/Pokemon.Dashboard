@@ -35,10 +35,9 @@ $ npm run electron
 
 ### requirements 
 
-💩 TypeScript, tests, eslint.
-
 💩 Slider  gallery  for displaying multiple images.
 
+💩 tests,
 
 💩 Pagination.
 
@@ -49,6 +48,10 @@ $ npm run electron
 💩 Display loader each time you load data.
 
 💩 Filter by type | ability on  HOME to display selected pokemon.
+
+👍 TypeScript.
+
+👍 eslint.
 
 👍 Option to retrieve all data.
 

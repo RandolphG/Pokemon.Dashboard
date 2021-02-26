@@ -1,1 +1,1 @@
-export { initializeDataEpic, getDetailsEpic } from './initializeDataEpic';
+export { initializeDataEpic, getDetailsEpic, getFetchDetailsEpic } from "./initializeDataEpic";

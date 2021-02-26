@@ -11,6 +11,7 @@ import {
   SORT,
   SORT_REVERSE,
   GET_ALL_POKEMON_RESULTS,
+  GET_POKEMON_DETAILS_SUCCESS,
 } from "./actionType";
 import {
   GetPokemonDetailsFailureAction,
@@ -19,13 +20,12 @@ import {
   GetPokemonFailureAction,
   GetPokemonSuccessAction,
   Pokemon,
-  PokemonDetailsReducer,
   SetAllResultsAction,
   SetSearchInputAction,
   ToggleLeftPanelAction,
   ToggleRightPanelAction,
 } from "../../components";
-import { PokemonListData } from "../services";
+import { DetailsData, PokemonListData } from "../services/types";
 
 export const getPokemonRequest = () => ({ type: GET_POKEMON });
 
@@ -52,12 +52,15 @@ export const getPokemonDetailsRequest = (name: string): GetPokemonDetailsRequest
   name,
 });
 
-export const getPokemonDetailsSuccess = (
-  data: PokemonDetailsReducer
-): GetPokemonDetailsSuccessAction => ({
-  type: "GET_POKEMON_DETAILS_SUCCESS",
-  ...data,
-});
+export const getPokemonDetailsSuccess = (data: DetailsData): GetPokemonDetailsSuccessAction => {
+  console.log(`STATE STUFF`, data);
+
+  return {
+    ...data,
+    type: GET_POKEMON_DETAILS_SUCCESS,
+    data: data,
+  };
+};
 
 export const getPokemonDetailsFailure = (error: Error): GetPokemonDetailsFailureAction => ({
   type: GET_POKEMON_DETAILS_FAILURE,

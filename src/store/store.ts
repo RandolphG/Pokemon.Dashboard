@@ -3,7 +3,7 @@ import { createLogger } from "redux-logger";
 import { createEpicMiddleware } from "redux-observable";
 import thunk from "redux-thunk";
 import rootReducer from "./reducers";
-import { root } from "./rootEpic";
+import { rootEpics }  from "./rootEpic";
 import { createBrowserHistory } from 'history';
 
 export const history = createBrowserHistory();
@@ -18,11 +18,10 @@ const logger = createLogger({
 
 const middleware = applyMiddleware(epicMiddleware, thunk, logger);
 
-const composeEnhancer = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancer = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ trace: true }) || compose;
 
-console.log(``)
 const store = createStore(rootReducer, composeEnhancer(middleware));
 
-epicMiddleware.run(root);
+epicMiddleware.run(rootEpics);
 
 export default store;

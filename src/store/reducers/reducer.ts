@@ -25,18 +25,15 @@ const initialState: PokemonReducer = {
 
 const details = {
   id: null,
-  name: "",
-  species: null,
+  abilities: null,
   base_experience: null,
   height: null,
-  is_default: null,
+  name: "",
   order: null,
-  weight: null,
-  abilities: null,
-  stats: null,
-  held_items: null,
   sprites: null,
+  stats: null,
   types: [],
+  weight: null,
 };
 
 const buttonsState: ButtonsReducer = {
@@ -115,38 +112,25 @@ export const pokemonReducer = createReducer(initialState, {
   }),
 });
 
-export const pokemonDetailsReducer = createReducer(details, {
+export const detailsReducer = createReducer(details, {
   [GET_POKEMON_DETAILS_SUCCESS]: (
     state,
-    {
+    { id, abilities, base_experience, height, order, name, sprites, stats, types, weight }
+  ) => {
+    console.log(`STATE STUFF`);
+
+    return {
+      ...state,
       id,
-      name,
-      species,
+      abilities,
       base_experience,
       height,
-      is_default,
       order,
-      weight,
-      abilities,
-      stats,
-      held_items,
+      name,
       sprites,
+      stats,
       types,
-    }
-  ) => ({
-    ...state,
-    id,
-    name,
-    species,
-    base_experience,
-    height,
-    is_default,
-    order,
-    weight,
-    abilities,
-    stats,
-    held_items,
-    sprites,
-    types,
-  }),
+      weight,
+    };
+  },
 });

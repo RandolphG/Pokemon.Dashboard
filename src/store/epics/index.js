@@ -1,6 +1,6 @@
-import { combineEpics } from 'redux-observable';
-import { initializeDataEpic, getDetailsEpic } from './initializeDataEpic';
+import { combineEpics } from "redux-observable";
+import { initializeDataEpic, getDetailsEpic, getFetchDetailsEpic } from "./initializeDataEpic";
 
-const rootEpics = combineEpics(initializeDataEpic, getDetailsEpic);
+const root = combineEpics(initializeDataEpic, getDetailsEpic, getFetchDetailsEpic);
 
-export default rootEpics;
+export default root;
