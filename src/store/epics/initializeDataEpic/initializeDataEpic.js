@@ -10,9 +10,7 @@ import {
   getPokemonFailure,
   getPokemonSuccess,
 } from "../../actions";
-import { fromFetch } from "rxjs/fetch";
 import { ajax } from "rxjs/ajax";
-import { Ability, PokemonStats, PokemonType } from "../../services/types";
 
 export const initializeDataEpic = action$ =>
   action$.pipe(
@@ -38,30 +36,6 @@ export const getDetailsEpic = action$ =>
     })
   );
 
-/*
-export const getFetchDetailsEpic = action$ =>
-  action$.pipe(
-    ofType(GET_POKEMON_DETAILS_REQUEST),
-    fromFetch("https://pokeapi.co/api/v2/pokemon/bulbasaur").pipe(
-      switchMap(response => {
-        if (response.ok) {
-          // OK return data
-          console.log(`OK DATA RETURN`, response.json());
-          return response.json();
-        } else {
-          // Server is return a status so client can do something
-          return of({ error: true, message: `Error: ${response.status}` });
-        }
-      }),
-      catchError(err => {
-        // Network or other error, handle appropriately
-        console.error(err);
-        return of({ error: true, message: err.message });
-      })
-    )
-  );
-*/
-
 export const getFetchDetailsEpic = action$ =>
   action$.pipe(
     ofType(GET_POKEMON_DETAILS_REQUEST),
@@ -77,7 +51,9 @@ export const getFetchDetailsEpic = action$ =>
             const pokemonAbilities = abilities.map(({ ability }) => ({
               name: ability.name,
             }));
+
             const pokemonTypes = types.map(({ type }) => ({ name: type.name }));
+
             const pokemonStats = stats.map(({ base_stat, stat }) => ({
               name: stat.name,
               baseStat: base_stat,
@@ -102,16 +78,6 @@ export const getFetchDetailsEpic = action$ =>
             console.log(`EPICS__POKEMON DETAILS`, details);
 
             return getPokemonDetailsSuccess(details);
-            /*
-            if (response.ok) {
-              // OK return data
-              console.log(`OK DATA RETURN`, response.json());
-              return response.json();
-            } else {
-              // Server is return a status so client can do something
-              return of({ error: true, message: `Error: ${response.status}` });
-            }
-            */
           } else {
             // Server is return a status so client can do something
             return of({ error: true, message: `Error: ${response.status}` });

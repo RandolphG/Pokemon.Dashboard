@@ -25,13 +25,6 @@ export interface RemoveNotificationAction {
   item: number;
 }
 
-export interface RootState {
-  pokemonReducer: PokemonReducer;
-  pokemonDetailsReducer: PokemonDetailsReducer;
-  notificationsReducer: NotificationsReducer;
-  buttonsReducer: ButtonsReducer;
-}
-
 export interface NotificationsReducer {
   notifications: number[];
 }
@@ -45,59 +38,12 @@ export interface ButtonsReducer {
   leftPanelShow: boolean;
 }
 
-export interface PokemonReducer {
-  allResults: Pokemon[];
-  results: Pokemon[];
-  filteredResults: Pokemon[];
-  searchInput: string;
-  next: string | null;
-  previous: string | null;
-  count: number | null;
-}
-
-/*
-export interface PokemonDetailsReducer {
-  id: number;
-  name: string;
-  base_experience: number;
-  height: number;
-  order: number;
-  weight: number;
-  abilities: string[];
-  stats: Stat[];
-  sprites: Sprites;
-  types: string[];
-}
-*/
-
-export interface PokemonDetailsReducer {
-  id: number;
-  name: string;
-  base_experience: number;
-  height: number;
-  order: number;
-  weight: number;
-  abilities: { ability: { name: string } }[];
-  stats: Stat[];
-  sprites: Sprites;
-  types: { type: PokemonType }[];
-}
-
-export interface PokemonType {
-  name: string;
-}
-
 export interface GetPokemonSuccessAction {
   type: typeof GET_POKEMON_SUCCESS;
   results: Pokemon[];
   count: number | null;
   next: string | null;
   previous: string | null;
-}
-
-export interface Sprites {
-  front_default: string;
-  back_shiny: string;
 }
 
 export interface Stat {

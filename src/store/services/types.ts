@@ -52,20 +52,20 @@ export interface ResponseData {
 }
 
 export interface DetailsData {
-  id: number;
-  abilities: Ability[];
-  base_experience: number;
-  height: number;
+  id: number | null;
+  abilities: Ability[] | null;
+  base_experience: number | null;
+  height: number | null;
   name: string;
-  order: number;
-  sprites: Sprites;
-  stats: PokemonStats[];
+  order: number | null;
+  sprites: Sprites | null;
+  stats: PokemonStats[] | null;
   types: PokemonType[];
-  weight: number;
+  weight: number | null;
 }
 
 export interface PokemonListData {
-  count: number;
+  count: number | null;
   next: string | null;
   previous: string | null;
   results: Results[];
