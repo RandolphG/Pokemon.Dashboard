@@ -56,7 +56,6 @@ $ npm run electron
 
 👍 Show the type of Pokémon on details page
 
-
 👍 Stay in the same view when refreshing.
 
 👍 api : https://pokeapi.co/docs/v2
@@ -73,11 +72,5 @@ $ npm run electron
 
 👍 ReactJS.
 
-
 👍 Redux.
-
-👍 Git repo and add cinnamondevelopers@gmail.com.
-
-👍 Neat commit.
-
 
