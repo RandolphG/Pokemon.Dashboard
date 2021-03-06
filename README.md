@@ -24,53 +24,15 @@ $ npm run electron
 💪 POKEMON Api : https://pokeapi.co/docs/v2
 
 💎  Styled Components & Custom css
+
 ☀️ electron
 
 🔧 connected react router
+
 🔋 redux
     
-
 🧛 reselect
+
 🦝 framer-motion
 
-### requirements 
-
-💩 TypeScript, tests, eslint.
-
-💩 Slider  gallery  for displaying multiple images.
-
-
-💩 Pagination.
-
-💩 Photo Placeholder.
-
-💩 Filtered List of similar type pokemon  in modal.
-
-💩 Display loader each time you load data.
-
-💩 Filter by type | ability on  HOME to display selected pokemon.
-
-👍 Option to retrieve all data.
-
-👍 Click on a pokemon name to get more details.
-
-👍 Show the type of Pokémon on details page
-
-👍 Stay in the same view when refreshing.
-
-👍 api : https://pokeapi.co/docs/v2
-
-👍 Search box.
-
-👍 Stylize to look good on desktop & mobile.
-
-👍 Functional & responsive.
-
-👍 UX and UI.
-
-👍 Code clarity & error handling.
-
-👍 ReactJS.
-
-👍 Redux.
 
